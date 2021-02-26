@@ -482,7 +482,8 @@ function processEvent(event, serviceName, streamName, callback) {
                 recordCallback(null, data);
             } else if (debug) {
                 console.log("Skipping record: " + JSON.stringify(record) + " with event type: " + record.eventName + " when writable events are: " + writableEventTypes);
-            }
+		recordCallback(null,null);
+	    }
         }
     }, function (err, extractedUserRecords) {
         if (err) {
